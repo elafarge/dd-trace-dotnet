@@ -65,7 +65,17 @@ namespace Datadog.Trace.Agent
 
             while (true)
             {
-                var request = _apiRequestFactory.Create(_tracesEndpoint);
+                IApiRequest request;
+
+                try
+                {
+                    request = _apiRequestFactory.Create(_tracesEndpoint);
+                }
+                catch (Exception ex)
+                {
+                    Log.Error(ex, "An error occurred while generating http request to send traces to the agent at {0}", _tracesEndpoint);
+                    return false;
+                }
 
                 // Set additional headers
                 request.AddHeader(AgentHttpHeaderNames.TraceCount, traceIds.Count.ToString());

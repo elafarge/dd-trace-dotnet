@@ -111,20 +111,16 @@ namespace Datadog.Trace.Agent
                 {
                     await Task.WhenAny(Task.Delay(TimeSpan.FromSeconds(1)), _processExit.Task)
                               .ConfigureAwait(false);
-
-                    if (_processExit.Task.IsCompleted)
-                    {
-                        await FlushTracesAsync().ConfigureAwait(false);
-                        return;
-                    }
-                    else
-                    {
-                        await FlushTracesAsync().ConfigureAwait(false);
-                    }
+                    await FlushTracesAsync().ConfigureAwait(false);
                 }
                 catch (Exception ex)
                 {
                     Log.SafeLogError(ex, "An unhandled error occurred during the flushing task");
+                }
+
+                if (_processExit.Task.IsCompleted)
+                {
+                    return;
                 }
             }
         }

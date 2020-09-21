@@ -23,6 +23,7 @@ namespace trace {
     environment::clr_disable_optimizations,
     environment::domain_neutral_instrumentation,
     environment::netstandard_enabled,
+    environment::dotnet_startup_hook_enabled,
     environment::azure_app_services,
     environment::azure_app_services_app_pool_id,
     environment::azure_app_services_cli_telemetry_profile_value};

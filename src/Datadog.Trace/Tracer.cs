@@ -150,8 +150,8 @@ namespace Datadog.Trace
             // Register callbacks to make sure we flush the traces before exiting
             AppDomain.CurrentDomain.ProcessExit += CurrentDomain_ProcessExit;
             AppDomain.CurrentDomain.DomainUnload += CurrentDomain_DomainUnload;
-            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
-            Console.CancelKeyPress += Console_CancelKeyPress;
+            // AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
+            // Console.CancelKeyPress += Console_CancelKeyPress;
 
             // start the heartbeat loop
             _heartbeatTimer = new Timer(HeartbeatCallback, state: null, dueTime: TimeSpan.Zero, period: TimeSpan.FromMinutes(1));
@@ -533,6 +533,7 @@ namespace Datadog.Trace
             try
             {
 #if NETFRAMEWORK
+                /*
                 // System.Web.dll is only available on .NET Framework
                 if (System.Web.Hosting.HostingEnvironment.IsHosted)
                 {
@@ -540,10 +541,12 @@ namespace Datadog.Trace
                     // note that ApplicationVirtualPath includes a leading slash.
                     return (System.Web.Hosting.HostingEnvironment.SiteName + System.Web.Hosting.HostingEnvironment.ApplicationVirtualPath).TrimEnd('/');
                 }
+                */
 #endif
 
-                return Assembly.GetEntryAssembly()?.GetName().Name ??
-                       Process.GetCurrentProcess().ProcessName;
+                // return Assembly.GetEntryAssembly()?.GetName().Name ??
+                // return Process.GetCurrentProcess().ProcessName;
+                return null;
             }
             catch (Exception ex)
             {

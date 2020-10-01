@@ -31,9 +31,9 @@ namespace Samples.WebRequest
             // SecurityPermissionFlag.SkipVerification
             // SecurityPermissionFlag.UnmanagedCode
             permSet.AddPermission(new SecurityPermission(SecurityPermissionFlag.Execution | SecurityPermissionFlag.SkipVerification));
-            permSet.AddPermission(new System.Net.WebPermission(PermissionState.Unrestricted)); // Needed for WebRequest sample AND Tracer
+            // permSet.AddPermission(new System.Net.WebPermission(PermissionState.Unrestricted)); // Needed for WebRequest sample AND Tracer
             permSet.AddPermission(new EnvironmentPermission(PermissionState.Unrestricted)); // Needed to get DD_TRACER_HOME variable
-            permSet.AddPermission(new FileIOPermission(PermissionState.Unrestricted)); // Needed to load assemblies from disk
+            // permSet.AddPermission(new FileIOPermission(PermissionState.Unrestricted)); // Needed to load assemblies from disk
             permSet.AddPermission(new ReflectionPermission(ReflectionPermissionFlag.MemberAccess | ReflectionPermissionFlag.RestrictedMemberAccess)); // Needed for dynamic method builder
 
             // Allow Sigil to be run with FullTrust
@@ -56,9 +56,14 @@ namespace Samples.WebRequest
 
         public static void RunWebRequestSync()
         {
-            LoaderStartupPath();
-            //EmitCustomSpans();
-            RunWebRequest().GetAwaiter().GetResult();
+            // LoaderStartupPath();
+            for (int i = 0; i < 5; i++)
+            {
+                EmitCustomSpans();
+                Thread.Sleep(2000);
+            }
+
+            // RunWebRequest().GetAwaiter().GetResult();
         }
 
         private static void EmitCustomSpans()

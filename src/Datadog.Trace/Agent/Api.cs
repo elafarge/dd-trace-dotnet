@@ -73,7 +73,7 @@ namespace Datadog.Trace.Agent
                 }
                 catch (Exception ex)
                 {
-                    Log.Error(ex, "An error occurred while generating http request to send traces to the agent at {0}", _tracesEndpoint);
+                    Log.Error(ex, $"An error occurred while generating http request to send traces to the agent at {_tracesEndpoint}");
                     return false;
                 }
 

@@ -104,7 +104,7 @@ namespace Datadog.Trace.Configuration
             // env > AppSettings > datadog.json
             var configurationSource = new CompositeConfigurationSource
             {
-                // new EnvironmentConfigurationSource(),
+                new EnvironmentConfigurationSource(),
 
 #if NETFRAMEWORK
                 // on .NET Framework only, also read from app.config/web.config

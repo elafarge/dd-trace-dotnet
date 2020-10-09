@@ -54,7 +54,6 @@ namespace Samples.WebRequest
                         Console.WriteLine("Received response for client.DownloadDataTaskAsync(Uri)");
                     }
 
-                    /*
                     using (Tracer.Instance.StartActive("DownloadFile"))
                     {
                         webClient.DownloadFile(url, "DownloadFile.string.txt");
@@ -81,7 +80,6 @@ namespace Samples.WebRequest
                         await webClient.DownloadFileTaskAsync(new Uri(url), "DownloadFileTaskAsync.uri.txt");
                         Console.WriteLine("Received response for client.DownloadFileTaskAsync(Uri, String)");
                     }
-                    */
 
                     using (Tracer.Instance.StartActive("DownloadString"))
                     {
@@ -179,7 +177,6 @@ namespace Samples.WebRequest
                         Console.WriteLine("Received response for client.UploadDataTaskAsync(Uri, String, Byte[])");
                     }
 
-                    /*
                     File.WriteAllText("UploadFile.txt", requestContent);
 
                     using (Tracer.Instance.StartActive("UploadFile"))
@@ -223,7 +220,6 @@ namespace Samples.WebRequest
                         await webClient.UploadFileTaskAsync(new Uri(url), "POST", "UploadFile.txt");
                         Console.WriteLine("Received response for client.UploadFileTaskAsync(Uri, String, String)");
                     }
-                    */
 
                     using (Tracer.Instance.StartActive("UploadString"))
                     {

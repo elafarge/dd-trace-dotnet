@@ -13,10 +13,8 @@
 
           "DD_DOTNET_TRACER_HOME": "$(ProjectDir)$(OutputPath)profiler-lib",
           "DD_INTEGRATIONS": "$(ProjectDir)$(OutputPath)profiler-lib\\integrations.json",
-
-          "DD_DOTNET_TRACER_STARTUP_HOOK_ENABLED": "false"
         },
-        "nativeDebugging": false
+        "nativeDebugging": true
       }
     }
   }

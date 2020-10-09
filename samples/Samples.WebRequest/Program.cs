@@ -2,15 +2,10 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Reflection;
-using System.Security;
-using System.Security.Permissions;
-using System.Security.Policy;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Datadog.Core.Tools;
-using Datadog.Trace;
 
 namespace Samples.WebRequest
 {
@@ -26,6 +21,7 @@ namespace Samples.WebRequest
 
         public static async Task Main(string[] args)
         {
+            bool tracingDisabled = args.Any(arg => arg.Equals("TracingDisabled", StringComparison.OrdinalIgnoreCase));
             Console.WriteLine($"TracingDisabled {tracingDisabled}");
 
             string port = args.FirstOrDefault(arg => arg.StartsWith("Port="))?.Split('=')[1] ?? "9000";

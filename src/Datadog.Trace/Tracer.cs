@@ -11,6 +11,7 @@ using Datadog.Trace.DiagnosticListeners;
 using Datadog.Trace.DogStatsd;
 using Datadog.Trace.Logging;
 using Datadog.Trace.Sampling;
+using Datadog.Trace.Util;
 using Datadog.Trace.Vendors.Newtonsoft.Json;
 using Datadog.Trace.Vendors.StatsdClient;
 
@@ -562,10 +563,8 @@ namespace Datadog.Trace
                 }
                 */
 #endif
-
-                // return Assembly.GetEntryAssembly()?.GetName().Name ??
-                // return Process.GetCurrentProcess().ProcessName;
-                return null;
+                return Assembly.GetEntryAssembly()?.GetName().Name ??
+                   ProcessHelpers.GetCurrentProcessName();
             }
             catch (Exception ex)
             {

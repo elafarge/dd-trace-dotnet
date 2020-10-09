@@ -160,7 +160,7 @@ namespace Datadog.Trace
             }
             catch (Exception ex)
             {
-                Log.Warning(ex, "Tracer unable to register a callback to shutdown when the AppDomain.UnhandledException event fires.");
+                Log.Warning(ex, "Unable to register a callback to the AppDomain.UnhandledException event.");
             }
 
             try
@@ -170,7 +170,7 @@ namespace Datadog.Trace
             }
             catch (Exception ex)
             {
-                Log.Warning(ex, "Tracer unable to register a callback to shutdown when the Console.CancelKeyPress event fires.");
+                Log.Warning(ex, "Unable to register a callback to the Console.CancelKeyPress event.");
             }
 
             // start the heartbeat loop

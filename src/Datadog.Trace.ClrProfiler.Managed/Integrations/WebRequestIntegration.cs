@@ -54,7 +54,7 @@ namespace Datadog.Trace.ClrProfiler.Integrations
                 var instrumentedType = webRequest.GetInstrumentedType("System.Net.WebRequest");
                 callGetResponse =
                     MethodBuilder<Func<object, WebResponse>>
-                        .Start(null, mdToken, opCode, methodName)
+                        .Start(moduleVersionPtr, mdToken, opCode, methodName)
                         .WithConcreteType(instrumentedType)
                         .WithNamespaceAndNameFilters("System.Net.WebResponse")
                         .Build();

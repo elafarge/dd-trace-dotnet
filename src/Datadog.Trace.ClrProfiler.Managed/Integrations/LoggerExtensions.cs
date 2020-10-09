@@ -29,16 +29,7 @@ namespace Datadog.Trace.ClrProfiler.Integrations
                 instrumentedMethod = $"{instrumentedMethod} with {string.Join(", ", relevantArguments)}";
             }
 
-            Guid moduleVersionId = Guid.Empty;
-            try
-            {
-                moduleVersionId = PointerHelpers.GetGuidFromNativePointer(moduleVersionPointer);
-            }
-            catch
-            {
-                // Do nothing
-            }
-
+            var moduleVersionId = PointerHelpers.GetGuidFromNativePointer(moduleVersionPointer);
             logger.Error(
                 exception,
                 $"Error (MVID: {moduleVersionId}, mdToken: {mdToken}, opCode: {opCode}) could not retrieve: {instrumentedMethod}");

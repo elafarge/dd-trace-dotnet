@@ -692,7 +692,7 @@ namespace Datadog.Trace.ClrProfiler.Emit
                 Module callingModule)
             {
                 Builder = builder;
-                CallingModuleMetadataToken = callingModule?.MetadataToken ?? 0;
+                CallingModuleMetadataToken = callingModule.MetadataToken;
             }
 
             public Type[] ExplicitParams => Builder._explicitParameterTypes ?? Builder._parameters;

@@ -181,14 +181,6 @@ CorProfiler::Initialize(IUnknown* cor_profiler_info_unknown) {
     instrument_domain_neutral_assemblies = true;
   }
 
-  // Check if the IL Startup hook should be injected
-  const WSTRING startup_hook_enabled_string =
-      GetEnvironmentValue(environment::dotnet_startup_hook_enabled);
-  if (startup_hook_enabled_string == "0"_W ||
-      startup_hook_enabled_string == "false"_W) {
-    startup_hook_enabled = false;
-  }
-
   // set event mask to subscribe to events and disable NGEN images
   // get ICorProfilerInfo6 for net452+
   ICorProfilerInfo6* info6;
@@ -586,8 +578,7 @@ HRESULT STDMETHODCALLTYPE CorProfiler::JITCompilationStarted(
   // hook which, at a minimum, must add an AssemblyResolve event so we can find
   // Datadog.Trace.ClrProfiler.Managed.dll and its dependencies on-disk since it
   // is no longer provided in a NuGet package
-  if (startup_hook_enabled &&
-      valid_startup_hook_callsite &&
+  if (valid_startup_hook_callsite &&
       first_jit_compilation_app_domains.find(module_metadata->app_domain_id) ==
       first_jit_compilation_app_domains.end()) {
     bool domain_neutral_assembly = runtime_information_.is_desktop() && corlib_module_loaded && module_metadata->app_domain_id == corlib_app_domain_id;

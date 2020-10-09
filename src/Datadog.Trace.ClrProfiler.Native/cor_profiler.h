@@ -35,7 +35,6 @@ class CorProfiler : public CorProfilerBase {
   std::unordered_set<AppDomainID> first_jit_compilation_app_domains;
   bool in_azure_app_services = false;
   bool is_desktop_iis = false;
-  bool startup_hook_enabled = true;
 
   //
   // OpCodes helper

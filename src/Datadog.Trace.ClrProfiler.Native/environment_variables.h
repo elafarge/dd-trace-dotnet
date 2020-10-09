@@ -22,9 +22,6 @@ const WSTRING integrations_path = "DD_INTEGRATIONS"_W;
 // "C:\Program Files\Datadog .NET Tracer\" or "/opt/datadog/"
 const WSTRING profiler_home_path = "DD_DOTNET_TRACER_HOME"_W;
 
-// Turn off the startup hook
-const WSTRING dotnet_startup_hook_enabled = "DD_DOTNET_TRACER_STARTUP_HOOK_ENABLED"_W;
-
 // Sets the filename of executables the profiler can attach to.
 // If not defined (default), the profiler will attach to any process.
 // Supports multiple values separated with semi-colons, for example:

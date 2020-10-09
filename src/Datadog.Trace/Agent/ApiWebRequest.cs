@@ -14,7 +14,7 @@ namespace Datadog.Trace.Agent
 
             // Default headers
             _request.Headers.Add(AgentHttpHeaderNames.Language, ".NET");
-            _request.Headers.Add(AgentHttpHeaderNames.TracerVersion, "1.19.2.0");
+            _request.Headers.Add(AgentHttpHeaderNames.TracerVersion, TracerConstants.AssemblyVersion);
 
             // don't add automatic instrumentation to requests from this HttpClient
             _request.Headers.Add(HttpHeaderNames.TracingEnabled, "false");

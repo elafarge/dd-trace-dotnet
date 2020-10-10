@@ -17,7 +17,6 @@ namespace Samples.WebRequest
         private static Thread listenerThread;
 
         private static string Url;
-        private static string ManagedProfilerDirectory;
 
         public static async Task Main(string[] args)
         {

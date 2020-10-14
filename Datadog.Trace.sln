@@ -352,11 +352,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Samples.HttpMessageHandler"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Samples.WebRequest", "samples\Samples.WebRequest\Samples.WebRequest.csproj", "{ED2742D3-2AA3-4D62-BB63-CFA43CEACCF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datadog.Trace.Tools.Runner", "src\Datadog.Trace.Tools.Runner\Datadog.Trace.Tools.Runner.csproj", "{1FCFD2BB-1610-4522-AD5E-074127211D0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Datadog.Trace.Tools.Runner.Tool", "src\Datadog.Trace.Tools.Runner\Datadog.Trace.Tools.Runner.Tool.csproj", "{1FCFD2BB-1610-4522-AD5E-074127211D0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datadog.Trace.DuckTyping", "src\Datadog.Trace.DuckTyping\Datadog.Trace.DuckTyping.csproj", "{77B80C3C-6437-4627-87FA-B38ABDD5D58D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Datadog.Trace.DuckTyping", "src\Datadog.Trace.DuckTyping\Datadog.Trace.DuckTyping.csproj", "{77B80C3C-6437-4627-87FA-B38ABDD5D58D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Datadog.Trace.DuckTyping.Tests", "test\Datadog.Trace.DuckTyping.Tests\Datadog.Trace.DuckTyping.Tests.csproj", "{91E50134-0E55-4D22-B180-6967174FCE0B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Datadog.Trace.Tools.Runner.Console", "src\Datadog.Trace.Tools.Runner\Datadog.Trace.Tools.Runner.Console.csproj", "{6199A2AD-172C-4447-9593-82793E58F45C}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -1316,6 +1318,18 @@ Global
 		{91E50134-0E55-4D22-B180-6967174FCE0B}.Release|x64.Build.0 = Release|Any CPU
 		{91E50134-0E55-4D22-B180-6967174FCE0B}.Release|x86.ActiveCfg = Release|Any CPU
 		{91E50134-0E55-4D22-B180-6967174FCE0B}.Release|x86.Build.0 = Release|Any CPU
+		{6199A2AD-172C-4447-9593-82793E58F45C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6199A2AD-172C-4447-9593-82793E58F45C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6199A2AD-172C-4447-9593-82793E58F45C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6199A2AD-172C-4447-9593-82793E58F45C}.Debug|x64.Build.0 = Debug|Any CPU
+		{6199A2AD-172C-4447-9593-82793E58F45C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6199A2AD-172C-4447-9593-82793E58F45C}.Debug|x86.Build.0 = Debug|Any CPU
+		{6199A2AD-172C-4447-9593-82793E58F45C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6199A2AD-172C-4447-9593-82793E58F45C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6199A2AD-172C-4447-9593-82793E58F45C}.Release|x64.ActiveCfg = Release|Any CPU
+		{6199A2AD-172C-4447-9593-82793E58F45C}.Release|x64.Build.0 = Release|Any CPU
+		{6199A2AD-172C-4447-9593-82793E58F45C}.Release|x86.ActiveCfg = Release|Any CPU
+		{6199A2AD-172C-4447-9593-82793E58F45C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1410,6 +1424,7 @@ Global
 		{1FCFD2BB-1610-4522-AD5E-074127211D0D} = {9E5F0022-0A50-40BF-AC6A-C3078585ECAB}
 		{77B80C3C-6437-4627-87FA-B38ABDD5D58D} = {9E5F0022-0A50-40BF-AC6A-C3078585ECAB}
 		{91E50134-0E55-4D22-B180-6967174FCE0B} = {8CEC2042-F11C-49F5-A674-2355793B600A}
+		{6199A2AD-172C-4447-9593-82793E58F45C} = {9E5F0022-0A50-40BF-AC6A-C3078585ECAB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {160A1D00-1F5B-40F8-A155-621B4459D78F}
